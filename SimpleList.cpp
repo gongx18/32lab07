@@ -1,5 +1,6 @@
 #include <iostream>
 #include "SimpleList.h"
+#include <vector>
 
 
 template<typename T>
@@ -79,8 +80,11 @@ void SimpleList<T>::remove(int index) throw (InvalidIndexException, EmptyListExc
 	EmptyListException e;
 	throw e; 
     }else{
-	for(int i = index; i < index; i++){
+	for(int i = index; i < numElements - 1; ++i){
 	    elements[i] = elements[i + 1]; 
 	}
+	numElements --; 
+	//elements->push_back();
+        elements->erase(elements->end() - 1);
     }
 }
