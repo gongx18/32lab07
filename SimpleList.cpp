@@ -1,7 +1,7 @@
 #include <iostream>
 #include "SimpleList.h"
 #include <vector>
-
+using namespace std; //namespace
 
 template<typename T>
 SimpleList<T>::SimpleList(){
@@ -80,11 +80,13 @@ void SimpleList<T>::remove(int index) throw (InvalidIndexException, EmptyListExc
 	EmptyListException e;
 	throw e; 
     }else{
-	for(int i = index; i < numElements - 1; ++i){
-	    elements[i] = elements[i + 1]; 
+ 	if(index >= numElements){
+	    numElements --; 
+	}else{  
+          for(int i = index + 1; i < numElements; ++i){
+	      elements[i - 1] = elements[i]; 
+	  }
+	  numElements --;
 	}
-	numElements --; 
-	//elements->push_back();
-        elements->erase(elements->end() - 1);
     }
 }

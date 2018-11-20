@@ -43,6 +43,7 @@ int main() {
 
 	list.remove(0);
 	list.remove(0);
+      
 
 	testDestructor1();
 	testDestructor2();
