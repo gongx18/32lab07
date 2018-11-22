@@ -73,20 +73,18 @@ void SimpleList<T>::insert(T item) throw (FullListException){
 
 template<typename T>
 void SimpleList<T>::remove(int index) throw (InvalidIndexException, EmptyListException){
-    if(index >= numElements || index < 0){
-	InvalidIndexException ii;
-	throw ii;
-    }else if(numElements == 0){
+    if(numElements == 0){
 	EmptyListException e;
 	throw e; 
+    }
+    else if(index >= numElements || index < 0){
+	InvalidIndexException ii;
+	throw ii; 
     }else{
- 	if(index >= numElements){
-	    numElements --; 
-	}else{  
           for(int i = index + 1; i < numElements; ++i){
 	      elements[i - 1] = elements[i]; 
 	  }
 	  numElements --;
 	}
-    }
 }
+

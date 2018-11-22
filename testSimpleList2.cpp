@@ -17,10 +17,11 @@ int main() {
 	bool caughtInvalidIndexException = false;
 
 	try {
-		list.remove(0);
-	} catch (EmptyListException e) {
-		caughtEmptyListException = true;
 		cout<<"entered catch"<<endl; 
+		list.remove(0);
+		cout<<"proceeded afer remove()"<<endl; 
+	} catch (EmptyListException e) {
+		caughtEmptyListException = true; 
 	} 
 	ASSERT_EQUALS(true, caughtEmptyListException);
 	caughtEmptyListException = false;
