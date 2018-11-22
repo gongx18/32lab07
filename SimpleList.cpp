@@ -75,7 +75,7 @@ template<typename T>
 void SimpleList<T>::remove(int index) throw (InvalidIndexException, EmptyListException){
     if(index >= numElements || index < 0){
 	InvalidIndexException ii;
-	throw ii; 
+	throw ii;
     }else if(numElements == 0){
 	EmptyListException e;
 	throw e; 

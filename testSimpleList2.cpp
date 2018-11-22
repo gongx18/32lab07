@@ -20,7 +20,8 @@ int main() {
 		list.remove(0);
 	} catch (EmptyListException e) {
 		caughtEmptyListException = true;
-	}
+		cout<<"entered catch"<<endl; 
+	} 
 	ASSERT_EQUALS(true, caughtEmptyListException);
 	caughtEmptyListException = false;
 
